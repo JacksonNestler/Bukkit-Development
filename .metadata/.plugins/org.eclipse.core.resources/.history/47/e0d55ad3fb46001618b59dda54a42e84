@@ -1,0 +1,16 @@
+package com.shoedevelopment.tutorial;
+
+import org.bukkit.plugin.PluginDescriptionFile;
+import org.bukkit.plugin.java.JavaPlugin; //Only the main file needs to extend the JavaPlugin.
+
+public class Tutorial extends JavaPlugin {
+
+	public void onEnable() {
+		PluginDescriptionFile pdfFile =  getDescription();
+	}
+	
+	public void onDisable() {
+		
+	}
+	
+}

@@ -1,0 +1,43 @@
+package com.shoedevelopment.tutorial;
+
+import java.util.logging.Logger;
+
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
+import org.bukkit.plugin.PluginDescriptionFile;
+import org.bukkit.plugin.java.JavaPlugin; //Only the main file needs to extend the JavaPlugin.
+
+public class PlayerTutorial extends JavaPlugin {
+
+	public void onEnable() {
+		PluginDescriptionFile pdfFile =  getDescription();
+		Logger logger = getLogger();
+		
+		logger.info(pdfFile.getName() + " has been enabled! (V. " + pdfFile.getVersion() + " )");
+	}
+	
+	public void onDisable() {
+		PluginDescriptionFile pdfFile =  getDescription();
+		Logger logger = getLogger();
+		
+		logger.info(pdfFile.getName() + " has been disabled! (V. " + pdfFile.getVersion() + " )");
+	}
+	
+	
+	public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+		//CommandSender -> Who sent the command.
+		//Command -> The actual command.
+		//label ->  /msg Shoe Hello     label: msg 
+		//string[] args -> first (0 technically) array position: "Shoe", second array position: "Hello"
+		
+		//Purpose: Player does /hello, server says "Hello!"
+		
+		if(sender instanceof Player) {
+			logger.info(sender + " issued /hello ");
+		}
+		
+		return true;
+	}
+	
+}

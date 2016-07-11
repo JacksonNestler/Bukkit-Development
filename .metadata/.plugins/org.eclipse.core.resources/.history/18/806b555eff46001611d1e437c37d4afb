@@ -1,0 +1,6 @@
+main: com.shoedevelopment.tutorial.Tutorial
+version: 1.0
+name: Player Tutorial Plugin
+
+commands:
+  hello: 

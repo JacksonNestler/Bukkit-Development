@@ -1,0 +1,3 @@
+INDEX VERSION 1.129+C:\Users\Java Development\workspace\Bukkit Plugins\.metadata\.plugins\org.eclipse.jdt.core
+3969785261.index
+26320968.index

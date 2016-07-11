@@ -1,0 +1,7 @@
+package com.shoedevelopment.tutorial;
+
+public class Tutorial extends JavaPlugin {
+
+	
+	
+}

@@ -1,0 +1,21 @@
+package com.shoedevelopment.tutorial;
+
+import java.util.logging.Logger;
+
+import org.bukkit.plugin.PluginDescriptionFile;
+import org.bukkit.plugin.java.JavaPlugin; //Only the main file needs to extend the JavaPlugin.
+
+public class Tutorial extends JavaPlugin {
+
+	public void onEnable() {
+		PluginDescriptionFile pdfFile =  getDescription();
+		Logger logger = Logger.getLogger("Minecraft");
+		
+		logger.info(pdfFile.getName() + " has been enabled! (V. " + pdfFile.getVersion() + " )");
+	}
+	
+	public void onDisable() {
+		
+	}
+	
+}
