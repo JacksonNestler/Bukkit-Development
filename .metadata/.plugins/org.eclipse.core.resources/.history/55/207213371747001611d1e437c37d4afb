@@ -1,0 +1,9 @@
+main: com.shoedevelopment.tutorial.PlayerTutorial
+version: 1.0
+name: Player Tutorial Plugin
+
+commands:
+  hello: 
+    description: Sends the player a beautiful message with many colors :)
+  healmenow:
+    description: 

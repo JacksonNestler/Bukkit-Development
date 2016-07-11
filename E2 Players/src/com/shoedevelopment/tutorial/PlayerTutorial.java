@@ -32,23 +32,63 @@ public class PlayerTutorial extends JavaPlugin {
 		// label -> /msg Shoe Hello label: msg
 		// string[] args -> first (0 technically) array position: "Shoe", second
 		// array position: "Hello"
-
+		
 		// Purpose: Player does /hello, server says "Hello!"
+		Player player = (Player) sender;
 		if (label.equalsIgnoreCase("Hello")) {
 
-			if (!(sender instanceof Player)) {
-				sender.sendMessage("You must be a player to use this command.");
+			if (!(isPlayerCheck(sender))) 
 				return false;
-			}
-
-			Player player = (Player) sender; // This safecasts it. We DEFINITELY
+			// This safecasts it. We DEFINITELY
 												// know it's a player, so we
 												// force it to become type
 												// "player"
 			player.sendMessage(ChatColor.AQUA + "Hello there " + player.getName() + "!");
 			return true;
 		}
+		
+		else if (label.equalsIgnoreCase("healmenow")) {
+			int playersCurrentEXP = player.getLevel();
+
+			
+			if (playersCurrentEXP > 0) 
+			{
+				player.damage(1);
+				player.sendMessage(ChatColor.AQUA + "No heals for you!");
+				return true;
+			}
+			
+			else if (playersCurrentEXP > 5) {
+				player.damage(2);
+				player.sendMessage(ChatColor.AQUA + "You should know better!");
+			}
+			
+			else if (playersCurrentEXP > 20) {
+				player.damage(5);
+				player.sendMessage(ChatColor.AQUA + "Getting vindictive now.");
+			}
+			
+			else if (playersCurrentEXP == 30) {
+				player.damage(10);
+				player.sendMessage("Pls refrain from getting free heals.");
+			}
+			
+			return true;
+		}
+		
+		
 		return false;
+	}
+	
+	public boolean isPlayerCheck(CommandSender sender) {
+		if (!(sender instanceof Player)) 
+		{
+			sender.sendMessage("You must be a player to use this command.");
+			return false;
+		}
+		
+		return true;
+		
 	}
 
 }
